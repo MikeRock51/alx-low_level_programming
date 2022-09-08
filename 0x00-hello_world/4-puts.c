@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Contains my code 
+ * main - Contains my code
  * @str: The string to be printed
  *
  * Return: 0 if all goes well
