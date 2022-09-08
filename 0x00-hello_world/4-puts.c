@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 /**
- * The main function
- * Declare a string variable and set the value to the given string
- * Print string with puts() function
- * return 0
+ * main - Contains my code 
+ * @str: The string to be printed
+ *
+ * Return: 0 if all goes well
  */
 int main(void)
 {
 	char str[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(str);
-	
+
 	return (0);
 
 }
