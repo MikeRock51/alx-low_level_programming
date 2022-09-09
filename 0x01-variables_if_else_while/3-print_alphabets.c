@@ -9,20 +9,18 @@
  */
 int main(void)
 {
-	char lower[26] = "abcdefghijklmnopqrstuvwxyz";
-	char upper[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char lower;
+	char upper;
 
-	int i;
-
-	for (i = 0; i < 26; i++)
+	for (lower = 'a'; lower < 'z'; lower++)
 	{
-		putchar(lower[i]);
+		putchar(lower);
 
 	}
 
-	for (i = 0; i < 26; i++)
+	for (upper = 'A'; upper < 'Z'; upper++)
 	{
-		putchar(upper[i]);
+		putchar(upper);
 	}
 
 		putchar('\n');
