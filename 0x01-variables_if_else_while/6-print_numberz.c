@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	int n = 0;
+	int n;
 
 	for (n = 0; n < 10; n++)
 	{
-		printf("%i", n);
+		putchar(n % 10 + '0');
 	}
 
-	printf("\n");
+	putchar('\n');
 
 	return (0);
 }
