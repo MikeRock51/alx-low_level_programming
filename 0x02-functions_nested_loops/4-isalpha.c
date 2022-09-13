@@ -11,13 +11,13 @@ int _isalpha(int c)
 	int upper;
 	int lower;
 	int i;
+	int j;
 
 	for (i = 'A'; i <= 'Z'; i++)
 	{
 		upper += i;
 	}
 
-	int j;
 
 	for (j = 'a'; j <= 'z'; j++)
 	{
