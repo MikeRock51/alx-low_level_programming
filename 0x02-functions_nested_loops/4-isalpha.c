@@ -8,23 +8,7 @@
  */
 int _isalpha(int c)
 {
-	int upper;
-	int lower;
-	int i;
-	int j;
-
-	for (i = 'A'; i <= 'Z'; i++)
-	{
-		upper += i;
-	}
-
-
-	for (j = 'a'; j <= 'z'; j++)
-	{
-		lower += j;
-	}
-
-	if (c == upper || c == lower)
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
 		return (1);
 	}
