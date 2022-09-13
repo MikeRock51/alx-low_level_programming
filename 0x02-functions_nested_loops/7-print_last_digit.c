@@ -3,15 +3,19 @@
  * print_last_digit - calculates the absoluye value if an integer
  * @n: takes an int n as input
  *
- * Return: 0 always
+ * Return: last digit
  */
 int print_last_digit(int n)
 {
+	int l;
+
 	if (n < 0)
 	{
-		return ((n * -1) % 10);
+		l = ((n * -1) % 10);
 	}
 
-	return (n % 10);
+	l = (n % 10);
+
+	_putchar(l + '0');
 
 }
