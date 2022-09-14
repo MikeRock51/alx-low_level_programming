@@ -5,14 +5,16 @@
  * @n: takes n as argument
  */
 void print_to_98(int n)
+{
+	int print = n;
 
 	while (n <= 98)
 	{
-		int print = n;
+		print = n;
 
 		printf("%i, ", print);
 		print++;
 	}
 
-	printf("\n");
+	_putchar('\n');
 }
