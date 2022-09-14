@@ -8,19 +8,19 @@ void print_to_98(int n)
 {
 	int print = n;
 
-	while (n <= 98)
+	while (n < 98)
 	{
 		printf("%i, ", print);
 		print++;
 		n++;
 	}
 
-	while (n >= 98)
+	while (n > 98)
 	{
 		printf("%i, ", print);
-		print++;
+		print--;
 		n--;
 	}
 
-	_putchar('\n');
+	printf("%i \n", print);
 }
