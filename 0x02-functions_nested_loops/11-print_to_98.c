@@ -15,6 +15,7 @@ void print_to_98(int n)
 			printf("%i, ", print);
 			n++;
 		}
+	}
 	else if (n > 98)
 	{
 		for (print = n; print > 98; print--)
