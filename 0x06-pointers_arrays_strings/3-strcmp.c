@@ -40,31 +40,14 @@ int _strcmp(char *s1, char *s2)
 
 	j = 0;
 
-	while (j < i)
+	while (s1[j] == s2[j])
 	{
-		if (s1[j] == s2[j])
+		if (s1[j] == '\0' || s2[j] == '\0')
 		{
-			if (s1[j] != '\0' && s2[j] != '\0')
-			{
-				j++;
-				continue;
-			}
-			else
-			{
-				break;
-			}
+			return (0);
 		}
-		else if (s1[j] > s2[j])
-		{
-			return (*s1 - *s2);
-			break;
-		}
-		else
-		{
-			return (*s1 - *s2);
-			break;
-		}
+		j++;
 	}
 
-	return (0);
+	return (*s1 - *s2);
 }
