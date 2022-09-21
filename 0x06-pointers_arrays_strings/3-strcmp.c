@@ -51,17 +51,17 @@ int _strcmp(char *s1, char *s2)
 			}
 			else
 			{
-				break;;
+				break;
 			}
 		}
 		else if (s1[j] > s2[j])
 		{
-			return (15);
+			return (*s1 - *s2);
 			break;
 		}
 		else
 		{
-			return (-15);
+			return (*s1 - *s2);
 			break;
 		}
 	}
