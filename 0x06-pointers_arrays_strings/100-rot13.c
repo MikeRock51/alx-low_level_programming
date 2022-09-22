@@ -9,20 +9,17 @@ char *rot13(char *str)
 {
 	int i, j;
 
-	char *a = "AaBbCcDdEeFfGgHhIiJjKkLlMm";
-	char *b = "NnOoPpQqRrSsTtUuVvWwXxYyZz";
+	char *a = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+	char *b = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
 
 	for (j = 0; str[j] != '\0'; j++)
 	{
-		for (i = 0; i < 26; i++)
+		for (i = 0; a[i] != '\0'; i++)
 		{
 			if (str[j] == a[i])
 			{
 				str[j] = b[i];
-			}
-			else if (str[j] == b[i])
-			{
-				str[j] = a[i];
+				break;
 			}
 		}
 	}
