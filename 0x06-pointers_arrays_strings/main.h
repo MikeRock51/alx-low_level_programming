@@ -46,5 +46,6 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *n);
 char *cap_string(char *);
 char *leet(char *str);
+char *rot13(char *str);
 
 #endif /* MAIN_H */
