@@ -3,7 +3,7 @@
 /**
  * _strpbrk - Checks for the first occurrnce of a set of
  * cbaracter in a string
- * @s: String to be checked 
+ * @s: String to be checked
  * @accept: set of characters to check for
  *
  * Return: s from the character that matches accept
@@ -17,7 +17,9 @@ char *_strpbrk(char *s, char *accept)
 		for (i = 0; accept[i]; i++)
 		{
 			if (accept[i] == *s)
-																return (s);
+			{
+				return (s);
+			}
 		}
 		s++;
 	}
