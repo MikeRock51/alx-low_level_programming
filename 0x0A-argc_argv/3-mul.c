@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Entry point to the program
@@ -8,17 +9,19 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 2)
+	int i, j, x;
+
+	if (argc < 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else
-	{
-		int x;
 
-		x = argv[1] * argv[2];
-		printf("%i\n", x);
-	}
+	i = atoi(argv[1]);
+	j = atoi(argv[2]);
+	x = i * j;
+
+	printf("%i\n", x);
+
 	return (0);
 }
