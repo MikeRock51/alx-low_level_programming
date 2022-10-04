@@ -2,24 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _strlen - Returns the length of string.
- * @s: Takes as s input
- *
- * Return: The length of *s
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i]; i++)
-	{
-		;
-	}
-
-	return (i);
-}
-
-/**
  * _strdup - Duplicates a given string and returns pointer to new address.
  * @str: String parameter
  *
@@ -30,16 +12,14 @@ char *_strdup(char *str)
 	char *str2;
 	int i, length;
 
-	length = _strlen(str);
-
-	str2 =  malloc(length + 1);
-
-	if (str2 == NULL)
+	for (i = 0, length = 0; str[i]; i++)
 	{
-		return (NULL);
+		length++;
 	}
 
-	for (i = 0; str[i];  i++)
+	str2 = malloc(length * sizeof(char) + 1);
+
+	for (i = 0; str[i]; i++)
 	{
 		str2[i] = str[i];
 	}
