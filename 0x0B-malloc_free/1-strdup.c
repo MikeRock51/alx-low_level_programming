@@ -28,21 +28,21 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	char *str2;
-	int i;
+	int i, length;
 
-	str2 =  malloc(_strlen(str) + 1);
-
-	str2[_strlen(str) + 1] = '\0';
+	length =  malloc(_strlen(str) + 1);
 
 	if (str2 == NULL || str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < _strlen(str); i++)
+	for (i = 0; i < length;  i++)
 	{
 		str2[i] = str[i];
 	}
+
+	str2[length] = '\0';
 
 	return (str2);
 }
