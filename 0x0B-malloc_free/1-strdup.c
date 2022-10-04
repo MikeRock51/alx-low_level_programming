@@ -28,9 +28,10 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	char *str2;
-	int i;
+	int i, l;
 
-	str2 = malloc(_strlen(str) + 1);
+	l =  malloc(_strlen(str) + 1);
+	str2 = l
 
 	if (str == NULL)
 	{
@@ -46,6 +47,8 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+
+	str2[l] = '\0';
 
 	return (str2);
 }
