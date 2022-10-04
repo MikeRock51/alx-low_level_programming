@@ -15,7 +15,10 @@ char *str_concat(char *s1, char *s2)
 	int i, j, len1, len2;
 
 	if (s1 == NULL && s2 == NULL)
-		return (NULL);
+	{
+		cat = "";
+		return (cat);
+	}
 
 	if (s1 == NULL)
 		s1 = "";
@@ -32,9 +35,7 @@ char *str_concat(char *s1, char *s2)
 	cat = malloc(len1 + len2 * sizeof(char) + 1);
 
 	if (cat == NULL)
-	{
 		return (NULL);
-	}
 
 	for (i = 0; s1[i]; i++)
 	{
