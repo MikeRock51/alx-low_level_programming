@@ -14,9 +14,19 @@ char *str_concat(char *s1, char *s2)
 	char *cat;
 	int i, j, len1, len2;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
+	}
+
+	if (s1 == NULL)
+	{
+		return (s2);
+	}
+
+	if (s2 == NULL)
+	{
+		return (s1);
 	}
 
 	for (i = 0, len1 = 0; s1[i]; i++)
@@ -29,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 		len2++;
 	}
 
-	cat = malloc(len1 + len2 * sizeof(char));
+	cat = malloc(len1 + len2 * sizeof(char) + 1);
 
 	if (cat == NULL)
 	{
