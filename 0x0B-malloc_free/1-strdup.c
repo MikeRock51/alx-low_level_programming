@@ -39,7 +39,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (i = 0; i < length;  i++)
+	for (i = 0; str[i];  i++)
 	{
 		str2[i] = str[i];
 	}
