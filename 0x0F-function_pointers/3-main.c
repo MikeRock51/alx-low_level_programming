@@ -24,7 +24,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	b = atoi(argv[3]);
 	opr = argv[2];
 
-	if (get_op_func(opr) == NULL)
+	if (get_op_func(opr) == NULL || opr[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
@@ -35,6 +35,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%i\n", get_op_func(opr)(a, b));
+	printf("%d\n", get_op_func(opr)(a, b));
 	return (0);
 }
