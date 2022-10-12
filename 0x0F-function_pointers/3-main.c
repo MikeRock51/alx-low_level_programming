@@ -11,7 +11,7 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int a, b;
+	int n1, n2;
 	char *opr;
 
 	if (argc != 4)
@@ -20,8 +20,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
 	opr = argv[2];
 
 	if (get_op_func(opr) == NULL || opr[1] != '\0')
@@ -30,11 +30,11 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(99);
 	}
 
-	if ((*opr == '/' && b == 0) || (*opr == '%' && b == 0))
+	if ((*opr == '/' && n2 == 0) || (*opr == '%' && n2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n", get_op_func(opr)(a, b));
+	printf("%d\n", get_op_func(opr)(n1, n2));
 	return (0);
 }
