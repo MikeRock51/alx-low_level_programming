@@ -11,7 +11,7 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int a, b, result;
+	int a, b;
 	char *opr;
 
 	if (argc != 4)
@@ -35,7 +35,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	result = get_op_func(opr)(a, b);
-	printf("%i\n", result);
+	printf("%i\n", get_op_func(opr)(a, b));
 	return (0);
 }
