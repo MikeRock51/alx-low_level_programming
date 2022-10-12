@@ -24,7 +24,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	b = atoi(argv[3]);
 	opr = argv[2];
 
-	if (get_op_func(opr) == NULL || opr[1] != '\0')
+	if (get_op_func(opr) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
