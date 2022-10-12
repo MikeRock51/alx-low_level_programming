@@ -30,12 +30,12 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(99);
 	}
 
-	if (*opr == '/' || (*opr == '%' && b == 0))
+	if ((*opr == '/' && b == 0) || (*opr == '%' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	result = (*get_op_func(opr))(a, b);
+	result = get_op_func(opr)(a, b);
 	printf("%i\n", result);
 	return (0);
 }
