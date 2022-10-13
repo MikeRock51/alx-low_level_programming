@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_string - Prints all strings passed as argument
+ * print_strings - Prints all strings passed as argument
  * @separator: Puctuation to be used between strings
  * @n: Number of argumenetrs passed
  */
