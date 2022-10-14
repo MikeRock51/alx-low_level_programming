@@ -12,10 +12,13 @@ void print_all(const char * const format, ...);
  * @speciier: The key to determine which print function to call
  * @print: Pointing to the appropriate print function based on the specifier
  */
+
+/*
 typedef struct printer
 {
 	char *specifier;
 	void (*print)(va_list args);
 } print_spec;
+*/
 
 #endif
