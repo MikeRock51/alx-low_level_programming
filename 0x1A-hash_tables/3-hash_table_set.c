@@ -18,11 +18,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_element == NULL || strlen(key) < 1)
 		return (0);
 
-	index = hash_djb2(key);
-	new_element->key = index;
-	new_element->value = value;
+	index = key_index((unsigned char *)key, ht->size);
+	new_element->key = strdup(key);
+	new_element->value = strdup(value);
 
 	if (ht->array[index] != NULL)
-	{
-	}
+		new_element->next = ht->array[index];
+	else
+		new_element->next = NULL;
+
+	ht->array[index] = new_element;
+	return (1);
 }
