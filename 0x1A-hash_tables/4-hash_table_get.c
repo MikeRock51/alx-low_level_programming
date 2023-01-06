@@ -25,6 +25,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (element == NULL)
 		return (NULL);
 	value = strdup(element->value);
+	if (value == NULL)
+		return (NULL);
 
 	return (value);
 }
