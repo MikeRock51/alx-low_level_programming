@@ -34,7 +34,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  * @key: The key to add - cannot be an empty string.
  * @value: The value associated with key.
  *
- * Return: Upon failure - 0.
+ * Return: 0 on failure.
  *         Otherwise - 1.
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
@@ -50,8 +50,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (value_copy == NULL)
 		return (0);
 
-	index = key_index((const unsigned char *)key, ht->size);
-	tmp = ht->shead;
+	index = key_index((const unsigned char *)key, ht->size), tmp = ht->shead;
 	while (tmp)
 	{
 		if (strcmp(tmp->key, key) == 0)
@@ -74,14 +73,16 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		free(value_copy), free(new);
 		return (0);
 	}
-	new->value = value_copy;
-	new->next = ht->array[index];
+	new->value = value_copy, new->next = ht->array[index];
 	ht->array[index] = new;
 
 	if (ht->shead == NULL)
 		new->sprev = NULL, new->snext = NULL, ht->shead = new, ht->stail = new;
 	else if (strcmp(ht->shead->key, key) > 0)
-		new->sprev = NULL, new->snext = ht->shead, ht->shead->sprev = new, ht->shead = new;
+	{
+		new->sprev = NULL, new->snext = ht->shead;
+		ht->shead->sprev = new, ht->shead = new;
+	}
 	else
 	{
 		tmp = ht->shead;
