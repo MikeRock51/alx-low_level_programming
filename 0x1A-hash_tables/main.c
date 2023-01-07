@@ -11,26 +11,20 @@
 int main(void)
 {
 	hash_table_t *ht;
-	char *value;
 
-	ht = hash_table_create(1024);
-	hash_table_set(ht, "USA", "Washington");
-	hash_table_set(ht, "France", "Paris");
-	hash_table_set(ht, "UK", "London");
-	hash_table_set(ht, "Spain", "Madrid");
-	hash_table_set(ht, "Germany", "Berlin");
-	hash_table_set(ht, "China", "Beijing");
-	hash_table_set(ht, "Russia", "Moscow");
-	hash_table_set(ht, "Bahrain", "Manama");
+	ht = hash_table_create(30);
 	hash_table_set(ht, "Canada", "Ottawa");
-	hash_table_set(ht, "Brazil", "Brasilia");
-	hash_table_set(ht, "Sweden", "Stockholm");
-	hash_table_set(ht, "Iceland", "Reykjavik");
-	hash_table_set(ht, "Japan", "Tokyo");
 	hash_table_set(ht, "Australia", "Canberra");
 
-    printf("p: %lu\n", hash_djb2((unsigned char *)"Poland") % 1024);
-	value = hash_table_get(ht, "Poland");
-	printf("%s:%s\n", "Poland", value);
+    printf("A: %lu\n", hash_djb2((unsigned char *)"Australia") % 30);
+    printf("Ca: %lu\n", hash_djb2((unsigned char *)"Canada") % 30);
+    /*printf("C: %lu\n", hash_djb2((unsigned char *)"China") % 30);
+    printf("J: %lu\n", hash_djb2((unsigned char *)"Japan") % 30);
+    printf("I: %lu\n", hash_djb2((unsigned char *)"Iceland") % 30);
+    printf("S: %lu\n", hash_djb2((unsigned char *)"Sweden") % 30);
+    printf("Br: %lu\n", hash_djb2((unsigned char *)"Brazil") % 30);
+    printf("Ba: %lu\n", hash_djb2((unsigned char *)"Bahrain") % 30);
+    printf("R: %lu\n", hash_djb2((unsigned char *)"Russia") % 30);*/
+	hash_table_print(ht);
 	return (EXIT_SUCCESS);
 }
