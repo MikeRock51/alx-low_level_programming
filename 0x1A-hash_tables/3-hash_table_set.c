@@ -28,10 +28,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	if (ht->array[index] != NULL)
-		new_element->next = ht->array[index];
+	{
+		if (strcmp(ht->array[index]->key, key) == 0)
+		{
+			free(ht->array[index]->value);
+			free(ht->array[index]->key);
+		}
+		else
+			new_element->next = ht->array[index];
+	}
 	else
 		new_element->next = NULL;
-
 	ht->array[index] = new_element;
+
 	return (1);
 }
