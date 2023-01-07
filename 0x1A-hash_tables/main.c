@@ -13,7 +13,7 @@ int main(void)
 	hash_table_t *ht;
 	char *value;
 
-	ht = hash_table_create(30);
+	ht = hash_table_create(1024);
 	hash_table_set(ht, "USA", "Washington");
 	hash_table_set(ht, "France", "Paris");
 	hash_table_set(ht, "UK", "London");
@@ -29,9 +29,8 @@ int main(void)
 	hash_table_set(ht, "Japan", "Tokyo");
 	hash_table_set(ht, "Australia", "Canberra");
 
-    printf("C: %lu\n", hash_djb2((unsigned char *)"Canada") % 30);
-    printf("A: %lu\n", hash_djb2((unsigned char *)"Australia") % 30);
-	value = hash_table_get(ht, "Canada");
-	printf("%s:%s\n", "Canada", value);
+    printf("p: %lu\n", hash_djb2((unsigned char *)"Poland") % 1024);
+	value = hash_table_get(ht, "Poland");
+	printf("%s:%s\n", "Poland", value);
 	return (EXIT_SUCCESS);
 }
