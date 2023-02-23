@@ -16,6 +16,9 @@ def island_perimeter(grid):
             connected to the water around the island).
     """
 
+    if len(grid) == 0:
+        return (0)
+
     perimeter = 0
     row_index = 0
     for row in grid:
